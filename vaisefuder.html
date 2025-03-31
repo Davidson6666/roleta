@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roleta Premium</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="roleta.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div id="login" class="tela ativa">
+        <div class="login-box">
+            <h2>Roleta Kirka</h2>
+            <form id="login-form">
+                <div class="input-group">
+                    <label for="nick">Nick do Jogo</label>
+                    <input type="text" id="nick" placeholder="Digite seu nick" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="id-jogo">ID do Jogo</label>
+                    <input type="text" id="id-jogo" placeholder="Digite seu ID" required>
+                </div>
+                
+                <div class="input-group">
+                    <label for="email">Seu Email</label>
+                    <input type="email" id="email" placeholder="exemplo@email.com" required>
+                </div>
+
+                <div class="input-group">
+                    <label for="idade">Idade</label>
+                    <input type="number" id="idade" placeholder="Digite sua idade" required>
+                </div>
+                
+                <button type="submit" class="btn-login">Acessar Roleta</button>
+            </form>            
+        </div>
+    </div>
+
+
+    <!-- Tela de Confirmação -->
+    <div id="confirmacao" class="tela">
+        <div class="confirmacao-box">
+            <h2>E-mail enviado com sucesso!</h2>
+            <p>Verifique sua caixa de entrada.</p>
+        </div>
+    </div>
+
+    <!-- Tela da Roleta -->
+    <div id="roleta-tela" class="tela">
+        <div class="main-container">
+            <div class="left-panel">
+                <div class="precos-container">
+                    <h3>Escolha um Preço</h3>
+                    <div class="preco-item" data-price="5">R$ 5,00</div>
+                    <div class="preco-item" data-price="10">R$ 10,00</div>
+                    <div class="preco-item" data-price="20">R$ 20,00</div>
+                    <div class="preco-item" data-price="50">R$ 50,00</div>
+                    <button id="pagar-btn" onclick="pagarAgora()" disabled>Pagar Agora</button>
+                </div>
+            </div>
+
+            <div class="roleta-content">
+                <h1 id="title">Roleta de Prêmios</h1>
+                <div class="roleta-container">
+                    <canvas id="roleta"></canvas>
+                </div>
+                
+                <div id="resultado"></div>
+                
+                <div class="btn-container">
+                    <button id="girar-btn" class="btn-girar" disabled>GIRAR ROLETA</button>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <div class="porcentagem-container">
+                    <h3>Probabilidades Reais</h3>
+                    <ul id="lista-porcentagem"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="pagamento-tela" class="tela">
+        <div class="pagamento-box">
+            <h2>Finalizar Pagamento</h2>
+            <p>Você está comprando créditos no valor de <span id="valor-selecionado">R$ 0,00</span></p>
+            
+            <div class="metodo-pagamento">
+                <button class="metodo-btn" data-method="pix">PIX</button>
+                <button class="metodo-btn" data-method="cartao">Cartão</button>
+                <button class="metodo-btn" data-method="boleto">Boleto</button>
+            </div>
+
+            <button id="finalizar-pagamento">CONFIRMAR PAGAMENTO</button>
+        </div>
+    </div>
+
+  <script src="roleta.js"></script>
+</body>
+</html>
